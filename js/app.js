@@ -5,7 +5,7 @@ jQuery(function($, undefined) {
 		} else if (command == 'chan -help') {
 
 		} else {
-			term.echo('');
+			term.echo('Hello');
 		}
 	}, { 
 		greetings: 'Greetings! My name is Chan Dokko. It is a pleasure to meet you! Simply use this like a command line interface. Type \'sean -help\' for command line options.',
