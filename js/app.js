@@ -1,7 +1,8 @@
 jQuery(function($, undefined) {
 	$("#terminal").terminal(function(command, term) {
-		if (command === "chan -help"){
-			term.echo("Usage: chan [-options] ");
+		term.resize();
+		if (command.toLowerCase() === "sean -help"){
+			term.echo("Usage: sean [-options] ");
 			term.echo("where options include:");
 			term.echo("\t -experiences");
 			term.echo("\t -employment");
@@ -13,26 +14,26 @@ jQuery(function($, undefined) {
 			term.echo("\t -linkedin");
 			term.echo("\t -email");
 			term.echo("\t -fullview  |  Displays all of the sections.");
-			term.echo("\t example: chan -skills");
-		} else if (command === 'chan -experiences') {
+			term.echo("\t example: sean -skills");
+		} else if (command.toLowerCase() === 'sean -experiences') {
 			term.echo(printExperiences());
-		} else if (command === 'chan -employment') {
+		} else if (command.toLowerCase() === 'sean -employment') {
 			term.echo(printEmployment());
-		} else if (command === 'chan -about') {
+		} else if (command.toLowerCase() === 'sean -about') {
 			term.echo(printAbout());
-		} else if (command === 'chan -skills') {
+		} else if (command.toLowerCase() === 'sean -skills') {
 			term.echo(printSkills());
-		} else if (command === 'chan -education') {
+		} else if (command.toLowerCase() === 'sean -education') {
 			term.echo(printEducation());
-		} else if (command === 'chan -projects') {
+		} else if (command.toLowerCase() === 'sean -projects') {
 			term.echo(printProjects());
-		} else if (command === 'chan -hobbies') {
+		} else if (command.toLowerCase() === 'sean -hobbies') {
 			term.echo(printHobbies());
-		} else if (command === 'chan -linkedin') {
+		} else if (command.toLowerCase() === 'sean -linkedin') {
 			term.echo("www.linkedin.com/in/dokko1230");
-		} else if (command === 'chan -email') {
+		} else if (command.toLowerCase() === 'sean -email') {
 			term.echo("dokko1230@gmail.com");
-		} else if (command === 'chan -fullview') {
+		} else if (command.toLowerCase() === 'sean -fullview') {
 			term.echo("About Me:");
 			term.echo(printAbout());
 			term.echo("My Employment History:");
@@ -48,12 +49,12 @@ jQuery(function($, undefined) {
 			term.echo("dokko1230@gmail.com");
 			term.echo("www.linkedin.com/in/dokko1230");
 		} else {
-			term.echo('Command not recognized.');
+			term.echo('command not recognized.');
 		}
 	}, {
-		greetings: 'Greetings! My name is Chan Dokko. It is a pleasure to meet you! Simply use this like a command line interface. \nType \'chan -help\' for command line options.\n ',
+		greetings: 'Greetings! My name is Sean Dokko. It is a pleasure to meet you! Simply use this like a command line interface. \nType \'sean -help\' for command line options.\n ',
 		name: 'js_demo',
-		height: 700,
+		// height: term.resize(),
 		prompt: '$> '});
 	
 	var printExperiences = function() {
@@ -142,7 +143,7 @@ jQuery(function($, undefined) {
 		var	s = "I like to read programming books. This summer, I've read the Pragmatic Programmer by Andrew Hunt,";
 			s+= "\nJavascript: The Good Parts by Douglas Crockford, and am currently reading Code Complete by Steve McConnell.";
 			s+= "\nBesides reading, I've been playing the cello for 8 years and am currently learning how to play the guitar.";
-			s+= "\nI like to snowboard whenever I get the chance to, which is not so often.";
+			s+= "\nI like to snowboard whenever I get the seance to, which is not so often.";
 			s+= "\n";
 			return s;
 	};
